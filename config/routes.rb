@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get '/' => 'base#index'
     # namespaced so admin can access all menu_items
     resources :menu_items
+    resources :locations
   end
 
 end
