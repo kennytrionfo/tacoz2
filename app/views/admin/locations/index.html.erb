@@ -1,0 +1,18 @@
+<h1>Admin Section</h1>
+<h2>Locations</h2>
+
+<h3><%= link_to('Add New Location', new_admin_location_path) %></h3>
+
+<% @locations.in_groups_of(4, false) do |group|  %>
+  <div class="row">
+    <% group.each do |location| %>
+      <div class="col-sm-3">
+        <address>
+          <%= location.street_address %> <%= location.street_address2 %><br />
+          <%= location.city %>, <%= location.state %> <%= location.zip %>
+        </address>
+        <a href='<%= admin_location_path(location) %>' class='btn btn-default'>View Map</a>
+      </div>
+    <% end %>
+  </div>
+<% end %>
