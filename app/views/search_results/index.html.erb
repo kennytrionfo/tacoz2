@@ -1,0 +1,8 @@
+<h1>Search Results for <%= params[:q] %></h1>
+
+<% @results.results.each do |result| %>
+  <div class="result">
+    <%= link_to(result.name, menu_item_path(result.id)) %>
+    <p><%= result.description %></p>
+  </div>
+<% end %>
